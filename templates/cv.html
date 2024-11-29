@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Currículum Profesional</title>
+    <style>
+
+    .navbar-toggler {
+        background-color: #fff; /* Fondo blanco para que destaque */
+        border: none; /*Elimina el borde */
+    }
+
+        /*Estilos para las opciones del menú al pasar el cursor sobre ellas*/
+        .nav-link {
+        transition: background-color 0.3s, color 0.3s; /* Añade una transición suave */
+        }
+
+        .nav-link:hover {
+        background-color: #8b8b8b;/* Cambia el color de fondo al pasar el cursor */
+        border-radius: 3px; /*Agregar un borde redondeado*/
+        }
+    </style>
+</head>
+<body class="bg-secondary text-white bg-opacity-70">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Jimmy Wilson Vera Saltos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#perfil">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#experiencia">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/">Volver al Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Información Personal -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <img src="{{ url_for('static', filename='images/Perfil.png') }}" class="card-img-top" alt="Foto de perfil">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Jimmy Wilson Vera Saltos</h5>
+                        <p class="card-text">
+                            <b>Fecha Nacimiento:</b> 16 abril 1997<br>
+                            <b>Lugar Nacimiento:</b> Los Ríos - Buena Fé<br>
+                            <b>Edad:</b> 24 años<br>
+                            <b>Estado Ciivl:</b> Soltero<br>
+                            <b>Dirección:</b> Cdl Vernaza Norte manzana 15 villa 27<br>
+                            <b>Correo:</b> verajimmy1997@gmail.com<br>
+                            <b>Teléfono:</b> 0982799278<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 text-center">
+                <h2 id="perfil">Perfil Profesional</h2>
+                <h3>Fortalezas</h3>
+                <p class="fs-5">
+                Soy una persona responsable, bastante dinámica, amigable, con deseos de superación, de aprender cosas nuevas 
+                y mis metas están basadas en el lograr objetivos claros; capto rápido y cumplo de manera adecuada, puntualidad, 
+                honestidad y responsabilidad en las distintas actividades que se designe.<br>
+                </p>
+                <h3>Objetivos</h3>
+                <p class="fs-5">
+                Lograr estabilidad laboral en una institución nacional o internacional y 
+                terminar mis estudios para seguir creciendo profesionalmente y así seguir mejorando 
+                mis habilidades y conocimientos, así como también adquirir la experiencia necesaria para
+                colaborar con el desarrollo e innovación de la empresa, y desempeñando mis funciones con eficiencia 
+                y seguir creciendo profesionalmente.
+                </p>
+            </div>
+        </div>
+
+        <!-- Experiencia Laboral -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 id="experiencia" class="text-center">Experiencia Laboral</h2>
+                <ul class="list-group shadow">
+                    <li class="list-group-item">
+                        <b>Empresa:</b> HERNAN CATAGUA<br>
+                        <b>Tiempo: </b> 1 año 6 meses<br>
+                        <b>Cargo:</b> Vendedor<br>
+                        <b>Descripción:</b> Soy el enlace directo entre la empresa y sus clientes, 
+                        en tal sentido de vender una serie de productos, y llegar al objetivo del presupuesto mensual.
+                    </li>
+                    <li class="list-group-item">
+                        <b>Empresa:</b> TACONAZO<br>
+                        <b>Tiempo: </b> 2 años 11 meses<br>
+                        <b>Cargo:</b> Cajero<br>
+                        <b>Descripción:</b> Atención al cliente, facturación.
+                    </li>
+                    <li class="list-group-item">
+                        <b>Empresa:</b> Notaria 81 - Dr. Piero Aycart Vincenzini Carrasco<br>
+                        <b>Tiempo: </b> 1 año 6 meses - actualidad<br>
+                        <b>Cargo:</b> Asistente<br>
+                        <b>Descripción:</b> Encargado de ayudar en el proceso de redacción y 
+                        preparación de documentos legales y notariales, así como de asistir al notario en la 
+                        realización de sus funciones.<br> Este trabajo es fundamental en el ámbito legal, 
+                        ya que garantiza la validez y seguridad de los documentos que se elaboran en una notaría.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Educación -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center">Educación</h2>
+                <div class="row bg-white text-dark text-center shadow">
+                    <div class="col-md-4">
+                        <h4>Primaria</h4>
+                        <p><b>Institución:</b><br>Escuela Fiscal Mixta “13 DE ABRIL”</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Secundaria</h4>
+                        <p><b>Institución:</b> <br>Unidad Educativa Fiscal “ALEJO LASCANO BAHAMONDE”</p>
+                        <p><b>Título:</b><br>Bachiller En Ciencias</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Superior</h4>
+                        <p>III Semestre de Gastronomía</p>
+                        <p>Cursando 7mo semestre en la carrera de Gestión Gerencial</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center">Habilidades</h2>
+                <div class="mb-3">
+                    <p>HTML</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-dark" role="progressbar" style="width: 50%;">50%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>EXCEL</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;">100%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center">Idiomas</h2>
+                <table class="table table-striped shadow">
+                    <thead>
+                        <tr>
+                            <th>Idioma</th>
+                            <th>Nivel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inglés</td>
+                            <td>Intermedio</td>
+                        </tr>
+                        <tr>
+                            <td>Español</td>
+                            <td>Nativo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center py-3">
+        <p class="mb-3" id="contacto">Sígueme en mis redes sociales</p>
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+        <p class="mt-2 text-white">© 2024 Jimmy Wilson Vera Saltos</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

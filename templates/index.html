@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    <style>
+        /* Establecer altura del cuerpo y html */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Usar flexbox para el layout */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Hacer que el contenido principal ocupe el espacio disponible */
+        .main-content {
+            flex: 1;
+        }
+
+        /* Estilos del navbar y footer */
+        .navbar-nav .nav-link:hover {
+            background-color: #8b8b8b;
+            border-radius: 3px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+    <!-- Enlace a la CDN de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-secondary text-white bg-opacity-70">
+
+    <div class="content-wrapper">
+        <!-- Navbar de Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="/">Clima App</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/cv">CV</a> <!-- Esta ruta es un ejemplo, luego deberás crear esa página -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-5 main-content">
+            <!-- Card de Bootstrap -->
+            <div class="card p-4 shadow-lg bg-dark text-white">
+                <h1 class="text-center">🌞Consultar El Clima</h1>
+
+                <!-- Formulario para ingresar ciudad -->
+                <form method="POST" action="/">
+                    <div class="mb-3">
+                        <label for="ciudad" class="form-label">Ingresa la ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad" value="{{ ciudad }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary w-100">Consultar Clima</button>
+                </form>
+
+                {% if clima.error %}
+                    <div class="alert alert-danger mt-3" role="alert">
+                        Error: {{ clima.error }}
+                    </div>
+                {% elif clima.temperatura %}
+                    <div class="mt-4">
+                        <h2 class="text-center">Clima en {{ ciudad }}</h2>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-dark text-white"><strong>📅 Día:</strong> {{ clima.dia }}</li>
+                            <li class="list-group-item bg-dark text-white"><strong>🌡️ Temperatura:</strong> {{ clima.temperatura }}°C</li>
+                            <li class="list-group-item bg-dark text-white"><strong>💧 Humedad:</strong> {{ clima.humedad }}%</li>
+                            <li class="list-group-item bg-dark text-white"><strong>💨 Velocidad del Viento:</strong> {{ clima.velocidad_viento }} m/s</li>
+                            <li class="list-group-item bg-dark text-white"><strong>☔ Probabilidad de Lluvia:</strong> {{ clima.probabilidad_lluvia }} mm</li>
+                            <li class="list-group-item bg-dark text-white"><strong>🔎 Descripción:</strong> {{ clima.icono }} {{ clima.descripcion }}</li>
+                            <li class="list-group-item bg-dark text-white"><strong>📍 Latitud:</strong> {{ clima.latitud }}</li>
+                            <li class="list-group-item bg-dark text-white"><strong>📍 Longitud:</strong> {{ clima.longitud }}</li>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="mt-2 text-white">© 2024 Jimmy Wilson Vera Saltos</p>
+        </footer>
+    </div>
+
+    <!-- Enlace a la CDN de Bootstrap JS (opcional para interactividad) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
